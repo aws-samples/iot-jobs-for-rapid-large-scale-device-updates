@@ -143,14 +143,14 @@ You can check the status of your job in the AWS IoT console by selecting "Jobs" 
 
 ## Tear down
 1. Delete any csv lists uploaded to Amazon S3 iotJobsLists bucket (e.g., excludeMyDemoThings.csv).
-2. Delete cloud infrastructure created by AWS Amplify by navigating to the AWS Amplify console and deleting the AWS Amplify App named “iotjobsblog”
-3. Invoke seedThings AWS Lambda function with the event below to delete all things with the “myDemoThings” prefix that were created for this walkthrough
+2. Invoke seedThings AWS Lambda function with the event below to delete all things with the “myDemoThings” prefix that were created for this walkthrough
 ```
 {
     "mode": "delete",   
     "demoThingPrefix": "myDemoThings"
 }
 ```
+3. Delete cloud infrastructure created by AWS Amplify by navigating to the AWS Amplify console and deleting the AWS Amplify App named “iotjobsblog”
 4. In IoT jobs, cancel and then delete the IoT jobs you created with the job AWS Lambda function. For example, jobName= "myFirstJob"
 5. In IoT Manage Thing Groups, delete the IoT Thing groups “{jobName}” and “{jobName}-exclude” for each job you created with the job AWS Lambda function
 6. In IoT Settings, navigate to the Fleet indexing section and select “Manage Indexing”. Update your IoT fleet index configuration back to the original state before completing the walkthrough.
