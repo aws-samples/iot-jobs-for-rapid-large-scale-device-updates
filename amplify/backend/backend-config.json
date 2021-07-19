@@ -1,0 +1,50 @@
+{
+  "storageCustom": {
+    "iotJobsLists": {
+      "providerPlugin": "awscloudformation",
+      "service": "iotJobsLists"
+    }
+  },
+  "function": {
+    "job": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "fillStaticThingGroup",
+          "attributes": [
+            "Name"
+          ]
+        },
+        {
+          "category": "storageCustom",
+          "resourceName": "iotJobsLists",
+          "attributes": [
+            "jobsListBucket"
+          ]
+        }
+      ]
+    },
+    "seedThings": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "fillStaticThingGroup": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storageCustom",
+          "resourceName": "iotJobsLists",
+          "attributes": [
+            "jobsListBucket"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "lambdaLayers": [],
+  "permissions": {
+    "function": {
+      "fillStaticThingGroup": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  }
+}
