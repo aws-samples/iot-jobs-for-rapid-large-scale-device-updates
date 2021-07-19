@@ -93,11 +93,11 @@ Create a job named "mySecondJob" that targets all things with prefix "myDemoThin
 This function is invoked by the jobs function and is not intended to be manually invoked. The function adds things from an Amazon S3 csv file to an IoT thing group. The function is recursive such that if it is still running after 10 min, the function invokes itself and stops. When invoking itself, the function provides the index of the last IoT thing added to the group and continues adding from this position. The function will continue self invoking until the group is fully populated. 
 
 ## Prerequisites
-* [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
-
 * [Nodejs](https://nodejs.org/en/download/)
 
-* [Amplify](https://docs.amplify.aws/cli/start/install) 
+* [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+
+* [AWS Amplify](https://docs.amplify.aws/cli/start/install) 
 ```
 npm install -g @aws-amplify/cli
 amplify configure
