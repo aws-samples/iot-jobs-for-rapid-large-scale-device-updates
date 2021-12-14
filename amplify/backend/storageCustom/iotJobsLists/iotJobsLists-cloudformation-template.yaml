@@ -28,6 +28,8 @@ Resources:
         ServerSideEncryptionConfiguration:
           - ServerSideEncryptionByDefault:
               SSEAlgorithm: AES256
+      VersioningConfiguration:
+        Status: Enabled
 Outputs:
   jobsListBucket:
     Description: 'Jobs lists storage' 
